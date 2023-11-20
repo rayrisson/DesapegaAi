@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "998032661140",
+    "project_id": "desapegaai-b086b",
+    "storage_bucket": "desapegaai-b086b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998032661140:android:8cf8d5db3e56ffc7bbf281",
+        "android_client_info": {
+          "package_name": "com.example.desapegaai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvOU1F24d33Y0f4XdW16UK1nA38XWDvLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

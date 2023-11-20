@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DesapegaAí</string>
+    <string name="title_nav_home">Início</string>
+    <string name="title_nav_favorites">Favoritos</string>
+    <string name="title_nav_chat">Conversas</string>
+    <string name="title_nav_account">Conta</string>
+    <string name="title_new_product">Novo produto</string>
+    <string name="search_placeholder">Pesquisar…</string>
+    <string name="register_text_button">Cadastrar</string>
+    <string name="login_text_button">Login</string>
+    <string name="name_placeholder_input">Nome</string>
+    <string name="email_placeholder_input">Email</string>
+    <string name="password_placeholder_input">Senha</string>
+    <string name="title_placeholder_input">Título</string>
+    <string name="description_placeholder_input">Descrição</string>
+    <string name="value_placeholder_input">Valor</string>
+    <string name="currency_symbol">R$</string>
+    <string name="publish_button">Publicar</string>
+    <string name="apply_button">Aplicar</string>
+    <string name="product">Produto</string>
+</resources>

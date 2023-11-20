@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.SearchView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_searchbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:queryBackground="@null"
+    android:background="@drawable/search_background"
+    android:layout_margin="12dp"
+    app:iconifiedByDefault="false"
+    app:queryHint="@string/search_placeholder" />

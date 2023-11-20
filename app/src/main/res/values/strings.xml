@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DesapegaAí</string>
+    <string name="title_nav_home">Home</string>
+    <string name="title_nav_favorites">Favorites</string>
+    <string name="title_nav_chat">Chat</string>
+    <string name="title_nav_account">Account</string>
+    <string name="title_new_product">New product</string>
+    <string name="search_placeholder">Search…</string>
+    <string name="register_text_button">Register</string>
+    <string name="login_text_button">Login</string>
+    <string name="name_placeholder_input">Name</string>
+    <string name="email_placeholder_input">Email</string>
+    <string name="password_placeholder_input">Password</string>
+    <string name="title_placeholder_input">Title</string>
+    <string name="description_placeholder_input">Description</string>
+    <string name="value_placeholder_input">Value</string>
+    <string name="currency_symbol">U$</string>
+    <string name="publish_button">Publish</string>
+    <string name="apply_button">Apply</string>
+    <string name="product">Product</string>
+</resources>
