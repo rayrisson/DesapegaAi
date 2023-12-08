@@ -15,13 +15,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/product"
         app:titleTextColor="?attr/colorOnPrimary"
-        android:translationZ="50dp"/>
+        android:translationZ="50dp"
+        app:menu="@menu/home_menu"/>
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/productImage"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="-15dp"
+        android:layout_marginTop="-18dp"
         android:alpha="0.5"
         android:scaleType="centerCrop"
         android:src="@drawable/default_product_image"
@@ -53,10 +54,36 @@
         app:layout_constraintTop_toBottomOf="@id/productTitle" />
 
     <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider"
+        android:id="@+id/divider1"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         app:layout_constraintTop_toBottomOf="@id/productValue"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/localText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="8dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="Undefined"
+        android:textColor="?attr/colorPrimary"
+        android:drawableTint="?attr/colorPrimary"
+        app:drawableLeftCompat="@drawable/ic_place_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/localText"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"/>
@@ -69,7 +96,7 @@
         android:text="@string/description_placeholder_input"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -78,6 +105,7 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/descriptionTitle"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -95,7 +123,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/publishButton"
+            android:id="@+id/contactVendorButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Contatar vendedor"/>

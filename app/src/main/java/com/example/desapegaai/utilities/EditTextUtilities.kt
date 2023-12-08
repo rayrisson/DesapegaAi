@@ -1,8 +1,9 @@
-package com.example.desapegaai
+package com.example.desapegaai.utilities
 
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import java.util.Locale
 
 open class EditTextUtilities {
     fun addDecimalLimiter(editText: EditText, maxLimit: Int = 2) {
@@ -32,37 +33,40 @@ open class EditTextUtilities {
     }
 
     private fun decimalLimiter(string: String, MAX_DECIMAL: Int): String {
+        val str = string.replace(".", "")
+        return "%,.0f".format(Locale.GERMAN, str.toDouble())
 
-        var str = string
-        if (str[0] == '.') str = "0$str"
-        val max = str.length
 
-        var rFinal = ""
-        var after = false
-        var i = 0
-        var up = 0
-        var decimal = 0
-        var t: Char
-
-        val decimalCount = str.count{ ".".contains(it) }
-
-        if (decimalCount > 1)
-            return str.dropLast(1)
-
-        while (i < max) {
-            t = str[i]
-            if (t != '.' && !after) {
-                up++
-            } else if (t == '.') {
-                after = true
-            } else {
-                decimal++
-                if (decimal > MAX_DECIMAL)
-                    return rFinal
-            }
-            rFinal += t
-            i++
-        }
-        return rFinal
+//        var str = string
+//        if (str[0] == '.') str = "0$str"
+//        val max = str.length
+//
+//        var rFinal = ""
+//        var after = false
+//        var i = 0
+//        var up = 0
+//        var decimal = 0
+//        var t: Char
+//
+//        val decimalCount = str.count{ ".".contains(it) }
+//
+//        if (decimalCount > 1)
+//            return str.dropLast(1)
+//
+//        while (i < max) {
+//            t = str[i]
+//            if (t != '.' && !after) {
+//                up++
+//            } else if (t == '.') {
+//                after = true
+//            } else {
+//                decimal++
+//                if (decimal > MAX_DECIMAL)
+//                    return rFinal
+//            }
+//            rFinal += t
+//            i++
+//        }
+//        return rFinal
     }
 }

@@ -3,28 +3,29 @@ package com.example.desapegaai.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.desapegaai.data.Product
-import com.example.desapegaai.services.ProductServiceImpl
+import com.example.desapegaai.services.product.ProductServiceImpl
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class HomeViewModel() : ViewModel() {
     private val _products = MutableLiveData<List<Product>>()
 
     val products: LiveData<List<Product>> = _products
 
-//    private val _text = MutableLiveData<String>().apply {
-//        value = "This is home Fragment"
-//    }
-//    val text: LiveData<String> = _text
-
     private val productService = ProductServiceImpl()
 
-    init {
-        getProducts()
-    }
+    fun getProducts(searchTerm: String? = null) {
+        viewModelScope.launch (Dispatchers.IO) {
+            try {
+                val productsList = productService.getProducts()
 
-    fun getProducts() {
-        productService.getProducts(onSuccess = {
-            _products.value = it
-        }){}
+                _products.postValue(
+                    if (searchTerm == null) productsList
+                    else productsList.filter { it.name!!.lowercase().contains(searchTerm.lowercase()) }
+                )
+            } catch (_: Exception) { }
+        }
     }
 }

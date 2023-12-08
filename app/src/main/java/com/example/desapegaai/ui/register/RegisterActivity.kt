@@ -1,22 +1,23 @@
-package com.example.desapegaai
+package com.example.desapegaai.ui.register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import com.example.desapegaai.ui.main.MainActivity
 import com.example.desapegaai.databinding.ActivityRegisterBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.userProfileChangeRequest
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
-    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var registerViewModel: RegisterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityRegisterBinding.inflate(layoutInflater)
-        firebaseAuth = FirebaseAuth.getInstance()
+        registerViewModel = ViewModelProvider(this)[RegisterViewModel::class.java]
+
 
         setContentView(binding.root)
 
@@ -32,18 +33,8 @@ class RegisterActivity : AppCompatActivity() {
     private fun createAccount(name: String, email:String, password: String) {
         if (android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
-                firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        (firebaseAuth.currentUser)!!.updateProfile(userProfileChangeRequest {
-                            displayName = name
-                        }).addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                updateUI()
-                            }
-                        }
-                    } else {
-                        Toast.makeText(this, "Error", Toast.LENGTH_SHORT)
-                    }
+                registerViewModel.createAccount(name, email, password, { updateUI() }){
+                    Toast.makeText(this, "Algo deu errado!\nTente novamente.", Toast.LENGTH_SHORT).show()
                 }
             }
         } else {

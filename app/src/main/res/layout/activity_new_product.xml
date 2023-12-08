@@ -19,18 +19,21 @@
         app:titleTextColor="?attr/colorOnPrimary"
         />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
     <LinearLayout
         android:id="@+id/formLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:paddingTop="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@id/buttonContainer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        android:padding="16dp"
+        >
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/productImage"
@@ -76,7 +79,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/value_placeholder_input"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:digits="0123456789"
+                android:maxLength="9"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,6 +120,8 @@
             android:maxLines="1"
             android:textColor="@color/material_on_surface_emphasis_medium"/>
     </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/buttonContainer"

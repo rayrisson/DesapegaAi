@@ -18,4 +18,9 @@
     <string name="publish_button">Publish</string>
     <string name="apply_button">Apply</string>
     <string name="product">Product</string>
+    <string name="nearby_products">Nearby products</string>
+    <string name="my_products">My products</string>
+    <string name="required_field">Required field</string>
+    <string name="favorite_button">Favorite</string>
+    <string name="value_with_currency">U$ %1$s</string>
 </resources>

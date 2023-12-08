@@ -1,9 +1,12 @@
-package com.example.desapegaai
+package com.example.desapegaai.ui.welcome
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.desapegaai.databinding.ActivityWelcomeBinding
+import com.example.desapegaai.ui.login.LoginActivity
+import com.example.desapegaai.ui.main.MainActivity
+import com.example.desapegaai.ui.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class WelcomeActivity : AppCompatActivity() {
@@ -30,10 +33,11 @@ class WelcomeActivity : AppCompatActivity() {
         super.onStart()
 
         if (firebaseAuth.currentUser != null) {
-            val mainIntent = Intent(this, MainActivity::class.java)
-
-            startActivity(mainIntent)
-            finish()
+            initActivity(MainActivity::class.java)
+//            val mainIntent = Intent(this, MainActivity::class.java)
+//
+//            startActivity(mainIntent)
+//            finish()
         }
 
     }
@@ -42,5 +46,6 @@ class WelcomeActivity : AppCompatActivity() {
         val intent = Intent(this, cls)
 
         startActivity(intent)
+        finish()
     }
 }

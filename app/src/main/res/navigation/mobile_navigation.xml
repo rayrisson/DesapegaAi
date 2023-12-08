@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_chat"
-        android:name="com.example.desapegaai.ui.chat.ChatFragment"
+        android:name="com.example.desapegaai.ui.chatlist.ChatListFragment"
         android:label="@string/title_nav_chat"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_chatlist" />
 
     <fragment
         android:id="@+id/navigation_account"
